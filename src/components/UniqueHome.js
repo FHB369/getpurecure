@@ -7,17 +7,17 @@ export default class UniqueHome extends Component {
       <div className="container">
         <div className="center-section">
           <div className="row justify-content-center">
-            <Link to="/search">
+            <Link to="/getpurecure/search">
               <img
-                src="/Search.png"
+                src="/getpurecure/Search.png"
                 alt="logo"
                 height="180px"
                 className="text-right"
               />
             </Link>
-            <Link to="/shop">
+            <Link to="/getpurecure/shop">
               <img
-                src="/Shop.png"
+                src="/getpurecure/Shop.png"
                 alt="logo"
                 height="180px"
                 className="text-left"
@@ -25,25 +25,25 @@ export default class UniqueHome extends Component {
             </Link>
           </div>
           <div className="row justify-content-center align-items-center">
-            <Link to="/hospitals">
+            <Link to="/getpurecure/hospitals">
               <img
-                src="/Hospitals.png"
+                src="/getpurecure/Hospitals.png"
                 alt="logo"
                 height="180px"
                 className="text-right"
               />
             </Link>
-            <Link to="/">
+            <Link to="/getpurecure/">
               <img
-                src="/icon.png"
+                src="/getpurecure/icon.png"
                 alt="logo"
                 height="200px"
                 className="main-logo text-center"
               />
             </Link>
-            <Link to="/doctors">
+            <Link to="/getpurecure/doctors">
               <img
-                src="/Doctors.png"
+                src="/getpurecure/Doctors.png"
                 alt="logo"
                 height="180px"
                 className="text-left"
@@ -51,17 +51,17 @@ export default class UniqueHome extends Component {
             </Link>
           </div>
           <div className="row justify-content-center">
-            <Link to="/blogs">
+            <Link to="/getpurecure/blogs">
               <img
-                src="/Blogs.png"
+                src="/getpurecure/Blogs.png"
                 alt="logo"
                 height="180px"
                 className="text-right"
               />
             </Link>
-            <Link to="/blogs">
+            <Link to="/getpurecure/blogs">
               <img
-                src="/Videos.png"
+                src="/getpurecure/Videos.png"
                 alt="logo"
                 height="180px"
                 className="text-left"

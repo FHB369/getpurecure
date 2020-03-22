@@ -29,30 +29,30 @@ class App extends React.Component {
           <div className="app">
             <div>
               <Switch>
-                <Route exact path="/">
+                <Route exact path="/getpurecure/">
                   {this.state.isAuth ? <HomePersonalized /> : <UniqueHome />}
                 </Route>
-                <Route exact path="/blogs">
+                <Route exact path="/getpurecure/blogs">
                   {this.state.isAuth ? <BlogsPersonalized /> : <BlogsGeneral />}
                 </Route>
-                <Route exact path="/doctors">
+                <Route exact path="/getpurecure/doctors">
                   {this.state.isAuth ? (
                     <DoctorsPersonalized />
                   ) : (
                     <DoctorsGeneral />
                   )}
                 </Route>
-                <Route exact path="/hospitals">
+                <Route exact path="/getpurecure/hospitals">
                   {this.state.isAuth ? (
                     <HospitalsPersonalized />
                   ) : (
                     <HospitalsGeneral />
                   )}
                 </Route>
-                <Route exact path="/shop">
+                <Route exact path="/getpurecure/shop">
                   <Shop />
                 </Route>
-                <Route exact path="/search">
+                <Route exact path="/getpurecure/search">
                   <Search />
                 </Route>
               </Switch>

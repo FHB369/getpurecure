@@ -71,11 +71,15 @@ export default class NavbarGeneral extends Component {
     } else {
       return (
         <nav className="mm-navbar-2">
-          <a href="/">
-            <img src="/logo-dark.png" height="70px" alt="getpurecure"></img>
+          <a href="/getpurecure/">
+            <img
+              src="/getpurecure/logo-dark.png"
+              height="70px"
+              alt="getpurecure"
+            ></img>
           </a>
           <div className="mm-navbar-center">
-            <Link to="/">
+            <Link to="/getpurecure/">
               <div>
                 <ion-icon
                   size="large"
@@ -93,7 +97,7 @@ export default class NavbarGeneral extends Component {
                 </small>
               </div>
             </Link>
-            <Link to="/blogs">
+            <Link to="/getpurecure/blogs">
               <div>
                 <ion-icon
                   size="large"
@@ -111,7 +115,7 @@ export default class NavbarGeneral extends Component {
                 </small>
               </div>
             </Link>
-            <Link to="/doctors">
+            <Link to="/getpurecure/doctors">
               <div>
                 <ion-icon
                   size="large"
@@ -133,7 +137,7 @@ export default class NavbarGeneral extends Component {
                 </small>
               </div>
             </Link>
-            <Link to="/hospitals">
+            <Link to="/getpurecure/hospitals">
               <div>
                 <ion-icon
                   size="large"
@@ -155,7 +159,7 @@ export default class NavbarGeneral extends Component {
                 </small>
               </div>
             </Link>
-            <Link to="/shop">
+            <Link to="/getpurecure/shop">
               <div>
                 <ion-icon
                   size="large"
@@ -175,10 +179,10 @@ export default class NavbarGeneral extends Component {
             </Link>
           </div>
           <div className="mm-navbar-right">
-            <a href="/">
+            <a href="/getpurecure/">
               &nbsp;&nbsp;&nbsp;&nbsp;<h6 className="text-accent">Sign In</h6>
             </a>
-            <a href="/">
+            <a href="/getpurecure/">
               &nbsp;&nbsp;<h6 className="text-dark">Sign Up</h6>
             </a>
           </div>
