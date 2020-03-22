@@ -79,34 +79,98 @@ export default class NavbarGeneral extends Component {
               <div>
                 <ion-icon
                   size="large"
-                  style={{ color: "#00cec2" }}
+                  style={
+                    this.props.selected === "home" ? { color: "#00cec2" } : {}
+                  }
                   name="home-sharp"
                 ></ion-icon>
-                <small style={{ color: "#00cec2" }}>Home</small>
+                <small
+                  style={
+                    this.props.selected === "home" ? { color: "#00cec2" } : {}
+                  }
+                >
+                  Home
+                </small>
               </div>
             </Link>
             <Link to="/blogs">
               <div>
-                <ion-icon size="large" name="fitness-sharp"></ion-icon>
-                <small>Blogs</small>
+                <ion-icon
+                  size="large"
+                  style={
+                    this.props.selected === "blogs" ? { color: "#00cec2" } : {}
+                  }
+                  name="fitness-sharp"
+                ></ion-icon>
+                <small
+                  style={
+                    this.props.selected === "blogs" ? { color: "#00cec2" } : {}
+                  }
+                >
+                  Blogs
+                </small>
               </div>
             </Link>
             <Link to="/doctors">
               <div>
-                <ion-icon size="large" name="medkit-sharp"></ion-icon>
-                <small>Doctors</small>
+                <ion-icon
+                  size="large"
+                  style={
+                    this.props.selected === "doctors"
+                      ? { color: "#00cec2" }
+                      : {}
+                  }
+                  name="medkit-sharp"
+                ></ion-icon>
+                <small
+                  style={
+                    this.props.selected === "doctors"
+                      ? { color: "#00cec2" }
+                      : {}
+                  }
+                >
+                  Doctors
+                </small>
               </div>
             </Link>
             <Link to="/hospitals">
               <div>
-                <ion-icon size="large" name="business-sharp"></ion-icon>
-                <small>Hospitals</small>
+                <ion-icon
+                  size="large"
+                  style={
+                    this.props.selected === "hospitals"
+                      ? { color: "#00cec2" }
+                      : {}
+                  }
+                  name="business-sharp"
+                ></ion-icon>
+                <small
+                  style={
+                    this.props.selected === "hospitals"
+                      ? { color: "#00cec2" }
+                      : {}
+                  }
+                >
+                  Hospitals
+                </small>
               </div>
             </Link>
             <Link to="/shop">
               <div>
-                <ion-icon size="large" name="cart-sharp"></ion-icon>
-                <small>Shop</small>
+                <ion-icon
+                  size="large"
+                  style={
+                    this.props.selected === "shop" ? { color: "#00cec2" } : {}
+                  }
+                  name="cart-sharp"
+                ></ion-icon>
+                <small
+                  style={
+                    this.props.selected === "shop" ? { color: "#00cec2" } : {}
+                  }
+                >
+                  Shop
+                </small>
               </div>
             </Link>
           </div>

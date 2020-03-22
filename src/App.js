@@ -10,6 +10,8 @@ import DoctorsGeneral from "./components/DoctorsGeneral";
 import HospitalsPersonalized from "./components/HospitalsPersonalized";
 import HospitalsGeneral from "./components/HospitalsGeneral";
 import Shop from "./components/Shop";
+import UniqueHome from "./components/UniqueHome";
+import Search from "./components/Search";
 
 class App extends React.Component {
   constructor(props) {
@@ -28,7 +30,7 @@ class App extends React.Component {
             <div>
               <Switch>
                 <Route exact path="/">
-                  {this.state.isAuth ? <HomePersonalized /> : <HomeGeneral />}
+                  {this.state.isAuth ? <HomePersonalized /> : <UniqueHome />}
                 </Route>
                 <Route exact path="/blogs">
                   {this.state.isAuth ? <BlogsPersonalized /> : <BlogsGeneral />}
@@ -49,6 +51,9 @@ class App extends React.Component {
                 </Route>
                 <Route exact path="/shop">
                   <Shop />
+                </Route>
+                <Route exact path="/search">
+                  <Search />
                 </Route>
               </Switch>
             </div>

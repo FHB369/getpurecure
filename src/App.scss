@@ -26,7 +26,7 @@ body {
 
   .mm-catagory-list,
   .mm-search-header {
-    background-color: #f8f8f8;
+    background-color: #ffffff;
   }
 
   .mm-card-title,
@@ -850,4 +850,18 @@ body {
   height: 360px;
   object-fit: cover;
   object-position: center;
+}
+
+.center-section {
+  height: 100vh;
+  padding-top: 3.5vh;
+  align-self: center;
+  img {
+    margin: 3vh;
+    transition: all 0.5s ease;
+  }
+
+  img:hover {
+    transform: scale(1.2);
+  }
 }
