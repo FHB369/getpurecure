@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/getpurecure/static/css/main.d989985d.chunk.css",
-    "main.js": "/getpurecure/static/js/main.02a788d1.chunk.js",
-    "main.js.map": "/getpurecure/static/js/main.02a788d1.chunk.js.map",
+    "main.js": "/getpurecure/static/js/main.f0b0cc68.chunk.js",
+    "main.js.map": "/getpurecure/static/js/main.f0b0cc68.chunk.js.map",
     "runtime-main.js": "/getpurecure/static/js/runtime-main.86e8d607.js",
     "runtime-main.js.map": "/getpurecure/static/js/runtime-main.86e8d607.js.map",
     "static/js/2.a19015b4.chunk.js": "/getpurecure/static/js/2.a19015b4.chunk.js",
     "static/js/2.a19015b4.chunk.js.map": "/getpurecure/static/js/2.a19015b4.chunk.js.map",
     "index.html": "/getpurecure/index.html",
-    "precache-manifest.aa59db9014b0c4d71390ed6c7c97f9ca.js": "/getpurecure/precache-manifest.aa59db9014b0c4d71390ed6c7c97f9ca.js",
+    "precache-manifest.8aa77d2dd6b24e4560cc39de8e4634dc.js": "/getpurecure/precache-manifest.8aa77d2dd6b24e4560cc39de8e4634dc.js",
     "service-worker.js": "/getpurecure/service-worker.js",
     "static/css/main.d989985d.chunk.css.map": "/getpurecure/static/css/main.d989985d.chunk.css.map",
     "static/js/2.a19015b4.chunk.js.LICENSE.txt": "/getpurecure/static/js/2.a19015b4.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.86e8d607.js",
     "static/js/2.a19015b4.chunk.js",
     "static/css/main.d989985d.chunk.css",
-    "static/js/main.02a788d1.chunk.js"
+    "static/js/main.f0b0cc68.chunk.js"
   ]
 }
