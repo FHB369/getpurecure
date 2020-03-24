@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b1cbec4b62399c0bb6bd043e1bb89028",
+    "revision": "841e7741089f41d95724a749ef62ce8a",
     "url": "/getpurecure/index.html"
   },
   {
-    "revision": "cf8c97b45cf0630a6c11",
-    "url": "/getpurecure/static/css/main.85e484ef.chunk.css"
+    "revision": "fd386b188ff6a8ad9937",
+    "url": "/getpurecure/static/css/main.f1ae940f.chunk.css"
   },
   {
     "revision": "bad06d7b6ed77b0d4a48",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/getpurecure/static/js/2.9f8dbe01.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cf8c97b45cf0630a6c11",
-    "url": "/getpurecure/static/js/main.5aa6142d.chunk.js"
+    "revision": "fd386b188ff6a8ad9937",
+    "url": "/getpurecure/static/js/main.0f1deb6c.chunk.js"
   },
   {
     "revision": "9f32d0307ea262384534",
