@@ -753,8 +753,8 @@ body {
 }
 
 .btn-accent {
-  background-color: mediumseagreen;
-  border-color: mediumseagreen;
+  background-color: #00cec2;
+  border-color: #00cec2;
 }
 
 .slider {
@@ -854,8 +854,10 @@ body {
 
 .center-section {
   height: 100vh;
-  padding-top: 3.5vh;
+  padding-top: 1rem;
   align-self: center;
+  margin-left: -2rem;
+  z-index: 999 !important;
   img {
     margin: 3vh;
     transition: all 0.5s ease;
@@ -864,4 +866,8 @@ body {
   img:hover {
     transform: scale(1.2);
   }
+}
+
+.feed {
+  margin-top: -7rem;
 }
