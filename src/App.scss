@@ -349,7 +349,7 @@ body {
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: center;
+
   align-items: center;
   position: sticky;
   top: 60px;
@@ -453,7 +453,7 @@ body {
   overflow: hidden;
   transition: all 0.5s ease !important;
   animation: yourAnimation 4s 1 0s ease !important;
-  min-height: 200px;
+  min-height: 70px;
 
   &:hover {
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.4);
@@ -869,5 +869,5 @@ body {
 }
 
 .feed {
-  margin-top: -7rem;
+  margin-top: -10rem;
 }

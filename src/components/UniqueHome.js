@@ -36,6 +36,15 @@ export default class UniqueHome extends Component {
             </div>
           </div>
           <div className="col-lg-4">
+            <div className="col-lg-12 mm-card d-flex align-items-center">
+              <input
+                type="text"
+                className="form-control bg-white"
+                placeholder="Search..."
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
             <div className="center-section">
               <div className="row justify-content-center">
                 <Link to="/getpurecure/search" className="col-md-4">
@@ -100,8 +109,20 @@ export default class UniqueHome extends Component {
                 </Link>
               </div>
             </div>
-            <div className="row feed">
-              <h2>Feed</h2>
+
+            <div className="row feed justify-content-center">
+              <button className="col-md-5 btn btn-accent mt-2 mx-4">
+                Sign In
+              </button>
+              <button className="col-md-5 btn btn-dark mt-2 mx-4 text-white">
+                Sign Up
+              </button>
+
+              <h2 className="col-md-12">
+                <br />
+                <br />
+                Feed
+              </h2>
               <div className="row">
                 {[1, 2, 3, 4, 5, 6].map(news => (
                   <BlogCard

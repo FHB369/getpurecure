@@ -33,6 +33,14 @@ export default class Search extends Component {
               </div>
             </form>
           </div>
+          <div className="col-md-12 text-right">
+            <img
+              src="/getpurecure/human.png"
+              alt="human"
+              width="250px"
+              className="ml-4"
+            />
+          </div>
           <br />
           <br />
           <br />
