@@ -6,7 +6,7 @@ export default class NavbarGeneral extends Component {
     super(props);
 
     this.state = {
-      style: this.props.type
+      style: this.props.type,
     };
   }
 
@@ -16,16 +16,6 @@ export default class NavbarGeneral extends Component {
         <>
           <nav className="mm-navbar">
             <div className="mm-navbar-center">
-              <Link to="/">
-                <div>
-                  <ion-icon
-                    size="large"
-                    style={{ color: "#00cec2" }}
-                    name="home-sharp"
-                  ></ion-icon>
-                  <small style={{ color: "#00cec2" }}>Home</small>
-                </div>
-              </Link>
               <Link to="/blogs">
                 <div>
                   <ion-icon size="large" name="fitness-sharp"></ion-icon>
@@ -79,24 +69,6 @@ export default class NavbarGeneral extends Component {
             ></img>
           </a>
           <div className="mm-navbar-center">
-            <Link to="/getpurecure/">
-              <div>
-                <ion-icon
-                  size="large"
-                  style={
-                    this.props.selected === "home" ? { color: "#00cec2" } : {}
-                  }
-                  name="home-sharp"
-                ></ion-icon>
-                <small
-                  style={
-                    this.props.selected === "home" ? { color: "#00cec2" } : {}
-                  }
-                >
-                  Home
-                </small>
-              </div>
-            </Link>
             <Link to="/getpurecure/blogs">
               <div>
                 <ion-icon
@@ -112,6 +84,24 @@ export default class NavbarGeneral extends Component {
                   }
                 >
                   Blogs
+                </small>
+              </div>
+            </Link>
+            <Link to="/getpurecure/videos">
+              <div>
+                <ion-icon
+                  size="large"
+                  style={
+                    this.props.selected === "videos" ? { color: "#00cec2" } : {}
+                  }
+                  name="videocam"
+                ></ion-icon>
+                <small
+                  style={
+                    this.props.selected === "videos" ? { color: "#00cec2" } : {}
+                  }
+                >
+                  Videos
                 </small>
               </div>
             </Link>
@@ -178,13 +168,13 @@ export default class NavbarGeneral extends Component {
               </div>
             </Link>
           </div>
-          <div className="mm-navbar-right">
-            <a href="/getpurecure/">
+          <div className="mm-navbar-right mb-4">
+            <Link to="/getpurecure/signin">
               &nbsp;&nbsp;&nbsp;&nbsp;<h6 className="text-accent">Sign In</h6>
-            </a>
-            <a href="/getpurecure/">
+            </Link>
+            <Link to="/getpurecure/signup">
               &nbsp;&nbsp;<h6 className="text-dark">Sign Up</h6>
-            </a>
+            </Link>
           </div>
         </nav>
       );

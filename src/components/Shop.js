@@ -1,12 +1,50 @@
 import React, { Component } from "react";
 import NavbarGeneral from "./NavbarGeneral";
+import NavbarPersonalized from "./NavbarPersonalized";
 import ProductCard from "./ProductCard";
 
+import axios from "axios";
+import URLs from "../URLs";
+
 export default class Shop extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      auth: false,
+      recent_products: [],
+    };
+  }
+
+  componentDidMount() {
+    const uid = localStorage.getItem("uid");
+    if (uid) {
+      this.setState({ auth: true });
+    }
+
+    axios
+      .get(URLs.shop_api + "products/all/recent")
+      .then((response) => {
+        if (response.status === 200) {
+          this.setState({
+            recent_products: response.data,
+          });
+        }
+      })
+      .catch((error) => {
+        console.log("error " + error);
+      });
+  }
+
   render() {
     return (
       <div className="overflow-hidden">
-        <NavbarGeneral type={2} selected={"shop"} />
+        {this.state.auth ? (
+          <NavbarPersonalized type={2} selected={"shop"} />
+        ) : (
+          <NavbarGeneral type={2} selected={"shop"} />
+        )}
+
         <div className="container">
           <br />
           <br />
@@ -15,15 +53,19 @@ export default class Shop extends Component {
           <div className="row">
             <h2>Trending Products</h2>
             <div className="row">
-              {[1, 2, 3, 4].map(news => (
+              {this.state.recent_products.map((news) => (
                 <ProductCard
                   size="col-md-3"
                   key={news}
+                  title={news.name}
+                  discountPrice={news.discountPrice}
+                  price={news.price}
+                  image={news.photos[0]}
                   content={{
                     url: "/",
                     source_url: "https://www.prothomalo.com",
                     title: "a",
-                    summary: "Test"
+                    summary: "Test",
                   }}
                 />
               ))}
@@ -34,24 +76,6 @@ export default class Shop extends Component {
           <br />
           <br />
           <br />
-
-          <div className="row">
-            <h2>Product Categories</h2>
-            <div className="row">
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(news => (
-                <ProductCard
-                  size="col-md-3"
-                  key={news}
-                  content={{
-                    url: "/",
-                    source_url: "https://www.prothomalo.com",
-                    title: "a",
-                    summary: "Test"
-                  }}
-                />
-              ))}
-            </div>
-          </div>
         </div>
         <br />
         <br />

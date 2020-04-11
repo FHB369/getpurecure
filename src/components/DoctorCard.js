@@ -10,13 +10,16 @@ export default function DoctorCard(props) {
       >
         <div className="mm-card-image">
           <img
-            src="https://image.freepik.com/free-vector/doctor-character-background_1270-84.jpg"
+            src={
+              props.photo ||
+              "https://image.freepik.com/free-vector/doctor-character-background_1270-84.jpg"
+            }
             alt={""}
           />
         </div>
         <div className="mm-card-content">
-          <h5 className="text-center text-dark">Doctor Name</h5>
-          <h6 className="text-center text-dark">Medicine Specialist</h6>
+          <h5 className="text-center text-dark">{props.name}</h5>
+          <h6 className="text-center text-dark">{props.category}</h6>
         </div>
       </div>
 
@@ -56,7 +59,7 @@ export default function DoctorCard(props) {
               </div>
               <br />
               <ul>
-                {props.content.summary.split(/\n|।/).map(line => (
+                {props.content.summary.split(/\n|।/).map((line) => (
                   <li>{line}</li>
                 ))}
               </ul>
@@ -70,7 +73,7 @@ export default function DoctorCard(props) {
                     weekday: "long",
                     year: "numeric",
                     month: "long",
-                    day: "numeric"
+                    day: "numeric",
                   })}
                 </div>
               ) : (

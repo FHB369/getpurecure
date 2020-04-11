@@ -12,14 +12,52 @@ import HospitalsGeneral from "./components/HospitalsGeneral";
 import Shop from "./components/Shop";
 import UniqueHome from "./components/UniqueHome";
 import Search from "./components/Search";
+import VideosPersonalized from "./components/VideosPersonalized";
+import VideosGeneral from "./components/VideosGeneral";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
+import URLs from "./URLs";
+import axios from "axios";
+import Profile from "./components/Profile";
+import CreateBlog from "./components/blogs/CreateBlog";
+import CreateVideo from "./components/videos/CreateVIdeo";
+import UpdateProfile from "./components/UpdateProfile";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      isAuth: false
+      isAuth: false,
+      loading: true,
     };
+  }
+
+  componentDidMount() {
+    const token = localStorage.getItem("token");
+    const uid = localStorage.getItem("uid");
+    if (token !== null && uid !== null) {
+      axios
+        .get(URLs.blog_api + "user/session?id=" + uid + "&token=" + token)
+        .then((response) => {
+          if (response.data === true) {
+            this.setState({
+              isAuth: true,
+              loading: false,
+            });
+          } else {
+            this.setState({ isAuth: false, loading: false });
+          }
+        })
+        .catch((error) => {
+          console.log("error " + error);
+        });
+    } else {
+      this.setState({
+        isAuth: false,
+        loading: false,
+      });
+    }
   }
 
   render() {
@@ -27,36 +65,85 @@ class App extends React.Component {
       <BrowserRouter>
         <div className="theme-light">
           <div className="app">
-            <div>
-              <Switch>
-                <Route exact path="/getpurecure/">
-                  {this.state.isAuth ? <HomePersonalized /> : <UniqueHome />}
-                </Route>
-                <Route exact path="/getpurecure/blogs">
-                  {this.state.isAuth ? <BlogsPersonalized /> : <BlogsGeneral />}
-                </Route>
-                <Route exact path="/getpurecure/doctors">
-                  {this.state.isAuth ? (
-                    <DoctorsPersonalized />
-                  ) : (
-                    <DoctorsGeneral />
-                  )}
-                </Route>
-                <Route exact path="/getpurecure/hospitals">
-                  {this.state.isAuth ? (
-                    <HospitalsPersonalized />
-                  ) : (
-                    <HospitalsGeneral />
-                  )}
-                </Route>
-                <Route exact path="/getpurecure/shop">
-                  <Shop />
-                </Route>
-                <Route exact path="/getpurecure/search">
-                  <Search />
-                </Route>
-              </Switch>
-            </div>
+            {this.state.loading ? (
+              <div
+                className="row justify-content-center"
+                style={{ marginTop: "35vh", overflow: "hidden" }}
+              >
+                <div className="col-12 text-center mb-4">
+                  <img
+                    src="/getpurecure/icon.png"
+                    alt="logo"
+                    height="130px"
+                    className="main-logo text-center"
+                  />
+                </div>
+
+                <div class="spinner-border text-accent" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
+              </div>
+            ) : (
+              <div>
+                <Switch>
+                  <Route exact path="/getpurecure/signin">
+                    {this.state.isAuth ? <HomePersonalized /> : <SignIn />}
+                  </Route>
+                  <Route exact path="/getpurecure/signup">
+                    {this.state.isAuth ? <HomePersonalized /> : <SignUp />}
+                  </Route>
+                  <Route exact path="/getpurecure/">
+                    {this.state.isAuth ? <HomePersonalized /> : <UniqueHome />}
+                  </Route>
+                  <Route exact path="/getpurecure/profile">
+                    {this.state.isAuth ? <Profile /> : <SignIn />}
+                  </Route>
+                  <Route exact path="/getpurecure/updateprofile">
+                    {this.state.isAuth ? <UpdateProfile /> : <SignIn />}
+                  </Route>
+                  <Route exact path="/getpurecure/createblog">
+                    {this.state.isAuth ? <CreateBlog /> : <SignIn />}
+                  </Route>
+                  <Route exact path="/getpurecure/createvideo">
+                    {this.state.isAuth ? <CreateVideo /> : <SignIn />}
+                  </Route>
+                  <Route exact path="/getpurecure/blogs">
+                    {this.state.isAuth ? (
+                      <BlogsPersonalized />
+                    ) : (
+                      <BlogsGeneral />
+                    )}
+                  </Route>
+                  <Route exact path="/getpurecure/videos">
+                    {this.state.isAuth ? (
+                      <VideosPersonalized />
+                    ) : (
+                      <VideosGeneral />
+                    )}
+                  </Route>
+                  <Route exact path="/getpurecure/doctors">
+                    {this.state.isAuth ? (
+                      <DoctorsPersonalized />
+                    ) : (
+                      <DoctorsGeneral />
+                    )}
+                  </Route>
+                  <Route exact path="/getpurecure/hospitals">
+                    {this.state.isAuth ? (
+                      <HospitalsPersonalized />
+                    ) : (
+                      <HospitalsGeneral />
+                    )}
+                  </Route>
+                  <Route exact path="/getpurecure/shop">
+                    <Shop />
+                  </Route>
+                  <Route exact path="/getpurecure/search">
+                    <Search />
+                  </Route>
+                </Switch>
+              </div>
+            )}
           </div>
         </div>
       </BrowserRouter>

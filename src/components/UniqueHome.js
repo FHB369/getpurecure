@@ -7,6 +7,13 @@ import PopularDoctors from "./popularCards/PopularDoctors";
 import PopularBlogs from "./popularCards/PopularBlogs";
 
 export default class UniqueHome extends Component {
+  componentDidMount() {
+    const token = localStorage.getItem("token");
+    const uid = localStorage.getItem("uid");
+    if (token !== null && uid !== null) {
+      window.location.reload();
+    }
+  }
   render() {
     return (
       <div className="container-fluid">
@@ -20,7 +27,7 @@ export default class UniqueHome extends Component {
                   url: "/",
                   source_url: "https://www.prothomalo.com",
                   title: "a",
-                  summary: "Test"
+                  summary: "Test",
                 }}
               />
               <PopularDoctors
@@ -30,7 +37,7 @@ export default class UniqueHome extends Component {
                   url: "/",
                   source_url: "https://www.prothomalo.com",
                   title: "a",
-                  summary: "Test"
+                  summary: "Test",
                 }}
               />
             </div>
@@ -99,7 +106,7 @@ export default class UniqueHome extends Component {
                     className="text-right"
                   />
                 </Link>
-                <Link to="/getpurecure/blogs" className="col-md-4">
+                <Link to="/getpurecure/videos" className="col-md-4">
                   <img
                     src="/getpurecure/Videos.png"
                     alt="logo"
@@ -111,32 +118,18 @@ export default class UniqueHome extends Component {
             </div>
 
             <div className="row feed justify-content-center">
-              <button className="col-md-5 btn btn-accent mt-2 mx-4">
+              <Link
+                to="/getpurecure/signin"
+                className="col-md-5 btn btn-accent mt-2 mx-4"
+              >
                 Sign In
-              </button>
-              <button className="col-md-5 btn btn-dark mt-2 mx-4 text-white">
+              </Link>
+              <Link
+                to="/getpurecure/signup"
+                className="col-md-5 btn btn-dark mt-2 mx-4 text-white"
+              >
                 Sign Up
-              </button>
-
-              <h2 className="col-md-12">
-                <br />
-                <br />
-                Feed
-              </h2>
-              <div className="row">
-                {[1, 2, 3, 4, 5, 6].map(news => (
-                  <BlogCard
-                    size="col-md-12"
-                    key={news}
-                    content={{
-                      url: "/",
-                      source_url: "https://www.prothomalo.com",
-                      title: "a",
-                      summary: "Test"
-                    }}
-                  />
-                ))}
-              </div>
+              </Link>
             </div>
           </div>
           <div className="col-lg-4">
@@ -148,7 +141,7 @@ export default class UniqueHome extends Component {
                   url: "/",
                   source_url: "https://www.prothomalo.com",
                   title: "a",
-                  summary: "Test"
+                  summary: "Test",
                 }}
               />
               <PopularBlogs
@@ -158,7 +151,7 @@ export default class UniqueHome extends Component {
                   url: "/",
                   source_url: "https://www.prothomalo.com",
                   title: "a",
-                  summary: "Test"
+                  summary: "Test",
                 }}
               />
             </div>

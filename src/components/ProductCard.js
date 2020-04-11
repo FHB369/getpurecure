@@ -10,13 +10,21 @@ export default function ProductCard(props) {
       >
         <div className="mm-card-image">
           <img
-            src="https://madebyloop.co.uk/images/products/slider/memphis/memphis-pattern-animated.gif"
+            src={
+              props.image ||
+              "https://madebyloop.co.uk/images/products/slider/memphis/memphis-pattern-animated.gif"
+            }
             alt={""}
           />
         </div>
         <div className="mm-card-content">
-          <h5 className="text-center text-dark">Product Name</h5>
-          <h6 className="text-center text-dark">৳ 1450.00</h6>
+          <h5 className="text-center text-dark">{props.title}</h5>
+          <h6 className="text-center text-dark">৳{props.discountPrice}</h6>
+          <h6 className="text-center text-danger">
+            <small>
+              <strike>৳{props.price}</strike>
+            </small>
+          </h6>
         </div>
       </div>
 
@@ -56,7 +64,7 @@ export default function ProductCard(props) {
               </div>
               <br />
               <ul>
-                {props.content.summary.split(/\n|।/).map(line => (
+                {props.content.summary.split(/\n|।/).map((line) => (
                   <li>{line}</li>
                 ))}
               </ul>
@@ -70,7 +78,7 @@ export default function ProductCard(props) {
                     weekday: "long",
                     year: "numeric",
                     month: "long",
-                    day: "numeric"
+                    day: "numeric",
                   })}
                 </div>
               ) : (

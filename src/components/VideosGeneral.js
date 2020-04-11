@@ -4,8 +4,9 @@ import BlogCard from "./BlogCard";
 
 import axios from "axios";
 import URLs from "../URLs";
+import NavbarGeneral from "./NavbarGeneral";
 
-export default class BlogsPersonalized extends Component {
+export default class VideosGeneral extends Component {
   constructor(props) {
     super(props);
 
@@ -16,7 +17,7 @@ export default class BlogsPersonalized extends Component {
 
   componentDidMount() {
     axios
-      .get(URLs.blog_api + "blog/getbytype?type=recent")
+      .get(URLs.blog_api + "video/getbytype?type=recent")
       .then((response) => {
         if (response.status === 200) {
           this.setState({
@@ -32,14 +33,14 @@ export default class BlogsPersonalized extends Component {
   render() {
     return (
       <div className="overflow-hidden">
-        <NavbarPersonalized type={2} selected={"blogs"} />
+        <NavbarGeneral type={2} selected={"videos"} />
         <div className="container">
           <br />
           <br />
           <br />
           <br />
           <div className="row">
-            <h2>Recent Blogs</h2>
+            <h2>Recent Videos</h2>
             <div className="row">
               {this.state.recent_blogs.map((news) => (
                 <BlogCard
@@ -47,7 +48,11 @@ export default class BlogsPersonalized extends Component {
                   key={news}
                   title={news.title}
                   category={news.category}
-                  image={news.image}
+                  image={
+                    "https://img.youtube.com/vi/" +
+                    news.video_links[0].split("v=")[1] +
+                    "/sddefault.jpg"
+                  }
                   content={{
                     url: "/",
                     source_url: "https://www.prothomalo.com",

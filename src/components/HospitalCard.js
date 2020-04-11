@@ -15,14 +15,29 @@ export default function HospitalCard(props) {
           />
         </div>
         <div className="mm-card-content">
-          <h5 className="text-dark">Hospital Name</h5>
-          <h6 className="text-dark">Dhaka</h6>
+          <h5 className="text-dark">{props.name}</h5>
+          <h6 className="text-dark">{props.category}</h6>
           <h6 className="text-dark">
-            <ion-icon name="star" style={{ color: "#00cec2" }}></ion-icon>
-            <ion-icon name="star" style={{ color: "#00cec2" }}></ion-icon>
-            <ion-icon name="star" style={{ color: "#00cec2" }}></ion-icon>
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
+            <ion-icon
+              name="star"
+              style={props.rating >= 1 ? { color: "#00cec2" } : {}}
+            ></ion-icon>
+            <ion-icon
+              name="star"
+              style={props.rating >= 2 ? { color: "#00cec2" } : {}}
+            ></ion-icon>
+            <ion-icon
+              name="star"
+              style={props.rating >= 3 ? { color: "#00cec2" } : {}}
+            ></ion-icon>
+            <ion-icon
+              name="star"
+              style={props.rating >= 4 ? { color: "#00cec2" } : {}}
+            ></ion-icon>
+            <ion-icon
+              name="star"
+              style={props.rating >= 5 ? { color: "#00cec2" } : {}}
+            ></ion-icon>
           </h6>
         </div>
       </div>
@@ -63,7 +78,7 @@ export default function HospitalCard(props) {
               </div>
               <br />
               <ul>
-                {props.content.summary.split(/\n|।/).map(line => (
+                {props.content.summary.split(/\n|।/).map((line) => (
                   <li>{line}</li>
                 ))}
               </ul>
@@ -77,7 +92,7 @@ export default function HospitalCard(props) {
                     weekday: "long",
                     year: "numeric",
                     month: "long",
-                    day: "numeric"
+                    day: "numeric",
                   })}
                 </div>
               ) : (

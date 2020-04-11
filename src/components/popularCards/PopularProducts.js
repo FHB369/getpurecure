@@ -48,18 +48,7 @@ export default function PopularProducts(props) {
               <b className="text-dark mr-1 text-lg">Product Name</b>
               <small className="text-dark ">৳1200</small>
             </li>
-            <li class="list-group-item  bg-white">
-              <img
-                src="https://madebyloop.co.uk/images/products/slider/memphis/memphis-pattern-animated.gif"
-                alt={""}
-                width="60px"
-                height="60px"
-                className="rounded-circle mr-2"
-              />
 
-              <b className="text-dark mr-1 text-lg">Product Name</b>
-              <small className="text-dark ">৳1200</small>
-            </li>
             <div className="row justify-content-center mt-3">
               <Link
                 to="/getpurecure/shop"
@@ -109,7 +98,7 @@ export default function PopularProducts(props) {
               </div>
               <br />
               <ul>
-                {props.content.summary.split(/\n|।/).map(line => (
+                {props.content.summary.split(/\n|।/).map((line) => (
                   <li>{line}</li>
                 ))}
               </ul>
@@ -123,7 +112,7 @@ export default function PopularProducts(props) {
                     weekday: "long",
                     year: "numeric",
                     month: "long",
-                    day: "numeric"
+                    day: "numeric",
                   })}
                 </div>
               ) : (

@@ -53,7 +53,10 @@ function BlogCard(props) {
       >
         <div className="mm-card-image">
           <img
-            src="https://cdn.slidemodel.com/wp-content/uploads/13081-01-gradient-designs-powerpoint-backgrounds-16x9-1.jpg"
+            src={
+              props.image ||
+              "https://cdn.slidemodel.com/wp-content/uploads/13081-01-gradient-designs-powerpoint-backgrounds-16x9-1.jpg"
+            }
             alt={""}
           />
         </div>
@@ -68,10 +71,10 @@ function BlogCard(props) {
               data-target={"#example" + props.content.url}
               target="_blank"
             >
-              <b>Blog Title</b>
+              <b>{props.title}</b>
             </a>
             {props.content.publish_date !== null ? (
-              <div className="mm-card-timestamp">Author Name</div>
+              <div className="mm-card-timestamp">{props.category}</div>
             ) : (
               <div />
             )}
@@ -136,7 +139,7 @@ function BlogCard(props) {
               </div>
               <br />
               <ul>
-                {props.content.summary.split(/\n|।/).map(line => (
+                {props.content.summary.split(/\n|।/).map((line) => (
                   <li>{line}</li>
                 ))}
               </ul>
@@ -150,7 +153,7 @@ function BlogCard(props) {
                     weekday: "long",
                     year: "numeric",
                     month: "long",
-                    day: "numeric"
+                    day: "numeric",
                   })}
                 </div>
               ) : (
