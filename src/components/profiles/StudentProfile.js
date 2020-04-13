@@ -393,10 +393,26 @@ export default class StudentProfile extends Component {
               <tbody>
                 {this.state.userBlogs.map((blog) => (
                   <tr>
-                    <th>{blog.title}</th>
-                    <td>{blog.category}</td>
-                    <td>{blog.date.substring(0, 10)}</td>
-                    <td>{blog.likes}</td>
+                    <th>
+                      <Link to={"/getpurecure/blog/" + blog._id}>
+                        {blog.title}
+                      </Link>
+                    </th>
+                    <td>
+                      <Link to={"/getpurecure/blog/" + blog._id}>
+                        {blog.category}
+                      </Link>
+                    </td>
+                    <td>
+                      <Link to={"/getpurecure/blog/" + blog._id}>
+                        {blog.date.substring(0, 10)}
+                      </Link>
+                    </td>
+                    <td>
+                      <Link to={"/getpurecure/blog/" + blog._id}>
+                        {blog.likes}
+                      </Link>
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -429,10 +445,26 @@ export default class StudentProfile extends Component {
               <tbody>
                 {this.state.userVideos.map((video) => (
                   <tr>
-                    <th>{video.title}</th>
-                    <td>{video.category}</td>
-                    <td>{video.date.substring(0, 10)}</td>
-                    <td>{video.video_links.length}</td>
+                    <th>
+                      <Link to={"/getpurecure/video/" + video._id}>
+                        {video.title}
+                      </Link>
+                    </th>
+                    <td>
+                      <Link to={"/getpurecure/video/" + video._id}>
+                        {video.category}
+                      </Link>
+                    </td>
+                    <td>
+                      <Link to={"/getpurecure/video/" + video._id}>
+                        {video.date.substring(0, 10)}
+                      </Link>
+                    </td>
+                    <td>
+                      <Link to={"/getpurecure/video/" + video._id}>
+                        {video.video_links.length}
+                      </Link>
+                    </td>
                   </tr>
                 ))}
               </tbody>

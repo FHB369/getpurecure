@@ -53,12 +53,7 @@ export default class VideosGeneral extends Component {
                     news.video_links[0].split("v=")[1] +
                     "/sddefault.jpg"
                   }
-                  content={{
-                    url: "/",
-                    source_url: "https://www.prothomalo.com",
-                    title: "a",
-                    summary: "Test",
-                  }}
+                  id={"/getpurecure/video/" + news._id}
                 />
               ))}
             </div>

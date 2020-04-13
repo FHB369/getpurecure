@@ -22,6 +22,12 @@ import Profile from "./components/Profile";
 import CreateBlog from "./components/blogs/CreateBlog";
 import CreateVideo from "./components/videos/CreateVIdeo";
 import UpdateProfile from "./components/UpdateProfile";
+import NutritionistsPersonalized from "./components/NutritionistsPersonalized";
+import NutritionistsGeneral from "./components/NutritionistsGeneral";
+import BlogDetails from "./components/blogs/BlogDetails";
+import VideoDetails from "./components/videos/VideoDetails";
+import DoctorPublicProfile from "./components/profiles/DoctorPublicProfile";
+import NutritionistPublicProfile from "./components/profiles/NutritionistPublicProfile";
 
 class App extends React.Component {
   constructor(props) {
@@ -104,6 +110,11 @@ class App extends React.Component {
                   <Route exact path="/getpurecure/createblog">
                     {this.state.isAuth ? <CreateBlog /> : <SignIn />}
                   </Route>
+                  <Route
+                    exact
+                    path="/getpurecure/blog/:id"
+                    component={BlogDetails}
+                  />
                   <Route exact path="/getpurecure/createvideo">
                     {this.state.isAuth ? <CreateVideo /> : <SignIn />}
                   </Route>
@@ -121,6 +132,11 @@ class App extends React.Component {
                       <VideosGeneral />
                     )}
                   </Route>
+                  <Route
+                    exact
+                    path="/getpurecure/video/:id"
+                    component={VideoDetails}
+                  />
                   <Route exact path="/getpurecure/doctors">
                     {this.state.isAuth ? (
                       <DoctorsPersonalized />
@@ -128,6 +144,23 @@ class App extends React.Component {
                       <DoctorsGeneral />
                     )}
                   </Route>
+                  <Route
+                    exact
+                    path="/getpurecure/doctor/:id"
+                    component={DoctorPublicProfile}
+                  />
+                  <Route exact path="/getpurecure/nutritionists">
+                    {this.state.isAuth ? (
+                      <NutritionistsPersonalized />
+                    ) : (
+                      <NutritionistsGeneral />
+                    )}
+                  </Route>
+                  <Route
+                    exact
+                    path="/getpurecure/nutritionist/:id"
+                    component={NutritionistPublicProfile}
+                  />
                   <Route exact path="/getpurecure/hospitals">
                     {this.state.isAuth ? (
                       <HospitalsPersonalized />

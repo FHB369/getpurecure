@@ -48,12 +48,7 @@ export default class BlogsGeneral extends Component {
                   title={news.title}
                   category={news.category}
                   image={news.image}
-                  content={{
-                    url: "/",
-                    source_url: "https://www.prothomalo.com",
-                    title: "a",
-                    summary: "Test",
-                  }}
+                  id={"/getpurecure/blog/" + news._id}
                 />
               ))}
             </div>

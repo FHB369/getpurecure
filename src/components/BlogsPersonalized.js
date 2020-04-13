@@ -16,7 +16,7 @@ export default class BlogsPersonalized extends Component {
 
   componentDidMount() {
     axios
-      .get(URLs.blog_api + "blog/getbytype?type=recent")
+      .get(URLs.blog_api + "blog/getbytype?type=popular")
       .then((response) => {
         if (response.status === 200) {
           this.setState({
@@ -48,12 +48,7 @@ export default class BlogsPersonalized extends Component {
                   title={news.title}
                   category={news.category}
                   image={news.image}
-                  content={{
-                    url: "/",
-                    source_url: "https://www.prothomalo.com",
-                    title: "a",
-                    summary: "Test",
-                  }}
+                  id={"/getpurecure/blog/" + news._id}
                 />
               ))}
             </div>

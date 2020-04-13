@@ -109,6 +109,28 @@ export default class NavbarPersonalized extends Component {
               </small>
             </div>
           </Link>
+          <Link to="/getpurecure/nutritionists">
+            <div>
+              <ion-icon
+                size="large"
+                style={
+                  this.props.selected === "nutritionists"
+                    ? { color: "#00cec2" }
+                    : {}
+                }
+                name="restaurant"
+              ></ion-icon>
+              <small
+                style={
+                  this.props.selected === "nutritionists"
+                    ? { color: "#00cec2" }
+                    : {}
+                }
+              >
+                Nutritionists
+              </small>
+            </div>
+          </Link>
           <Link to="/getpurecure/hospitals">
             <div>
               <ion-icon

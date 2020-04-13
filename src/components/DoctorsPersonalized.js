@@ -45,15 +45,10 @@ export default class DoctorsPersonalized extends Component {
                 <DoctorCard
                   size="col-md-4"
                   key={news}
-                  name={news.name}
-                  photo={news.photo}
-                  category={news.profile.category}
-                  content={{
-                    url: "/",
-                    source_url: "https://www.prothomalo.com",
-                    title: "a",
-                    summary: "Test",
-                  }}
+                  name={news.user_id.name}
+                  photo={news.user_id.photo}
+                  category={news.category}
+                  id={"/getpurecure/doctor/" + news.user_id._id}
                 />
               ))}
             </div>

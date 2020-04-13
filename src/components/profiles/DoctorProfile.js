@@ -393,10 +393,26 @@ export default class DoctorProfile extends Component {
               <tbody>
                 {this.state.userBlogs.map((blog) => (
                   <tr>
-                    <th>{blog.title}</th>
-                    <td>{blog.category}</td>
-                    <td>{blog.date.substring(0, 10)}</td>
-                    <td>{blog.likes}</td>
+                    <th>
+                      <Link to={"/getpurecure/blog/" + blog._id}>
+                        {blog.title}
+                      </Link>
+                    </th>
+                    <td>
+                      <Link to={"/getpurecure/blog/" + blog._id}>
+                        {blog.category}
+                      </Link>
+                    </td>
+                    <td>
+                      <Link to={"/getpurecure/blog/" + blog._id}>
+                        {blog.date.substring(0, 10)}
+                      </Link>
+                    </td>
+                    <td>
+                      <Link to={"/getpurecure/blog/" + blog._id}>
+                        {blog.likes}
+                      </Link>
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -429,10 +445,26 @@ export default class DoctorProfile extends Component {
               <tbody>
                 {this.state.userVideos.map((video) => (
                   <tr>
-                    <th>{video.title}</th>
-                    <td>{video.category}</td>
-                    <td>{video.date.substring(0, 10)}</td>
-                    <td>{video.video_links.length}</td>
+                    <th>
+                      <Link to={"/getpurecure/video/" + video._id}>
+                        {video.title}
+                      </Link>
+                    </th>
+                    <td>
+                      <Link to={"/getpurecure/video/" + video._id}>
+                        {video.category}
+                      </Link>
+                    </td>
+                    <td>
+                      <Link to={"/getpurecure/video/" + video._id}>
+                        {video.date.substring(0, 10)}
+                      </Link>
+                    </td>
+                    <td>
+                      <Link to={"/getpurecure/video/" + video._id}>
+                        {video.video_links.length}
+                      </Link>
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -458,35 +490,33 @@ export default class DoctorProfile extends Component {
                 <tbody>
                   <tr>
                     <th>About</th>
-                    {this.state.doctorInfo.profile !== undefined ? (
-                      <td>
-                        {ReactHtmlParser(this.state.doctorInfo.profile.about)}
-                      </td>
+                    {this.state.doctorInfo.category !== undefined ? (
+                      <td>{ReactHtmlParser(this.state.doctorInfo.about)}</td>
                     ) : (
                       <td>N/A</td>
                     )}
                   </tr>
                   <tr>
                     <th>Category</th>
-                    {this.state.doctorInfo.profile !== undefined ? (
-                      <td>{this.state.doctorInfo.profile.category}</td>
+                    {this.state.doctorInfo.category !== undefined ? (
+                      <td>{this.state.doctorInfo.category}</td>
                     ) : (
                       <td>N/A</td>
                     )}
                   </tr>
                   <tr>
                     <th>BMDC Code</th>
-                    {this.state.doctorInfo.profile !== undefined ? (
-                      <td>{this.state.doctorInfo.profile.bmdc_code}</td>
+                    {this.state.doctorInfo.category !== undefined ? (
+                      <td>{this.state.doctorInfo.bmdc_code}</td>
                     ) : (
                       <td>N/A</td>
                     )}
                   </tr>
                   <tr>
                     <th>Degrees</th>
-                    {this.state.doctorInfo.profile !== undefined ? (
+                    {this.state.doctorInfo.category !== undefined ? (
                       <td>
-                        {this.state.doctorInfo.profile.degrees.map((degree) => (
+                        {this.state.doctorInfo.degrees.map((degree) => (
                           <div className="btn btn-info mr-2">{degree}</div>
                         ))}
                       </td>
@@ -496,24 +526,24 @@ export default class DoctorProfile extends Component {
                   </tr>
                   <tr>
                     <th>Contact</th>
-                    {this.state.doctorInfo.profile !== undefined ? (
-                      <td>{this.state.doctorInfo.profile.contact}</td>
+                    {this.state.doctorInfo.category !== undefined ? (
+                      <td>{this.state.doctorInfo.contact}</td>
                     ) : (
                       <td>N/A</td>
                     )}
                   </tr>
                   <tr>
                     <th>Chamber Address</th>
-                    {this.state.doctorInfo.profile !== undefined ? (
-                      <td>{this.state.doctorInfo.profile.chamber_address}</td>
+                    {this.state.doctorInfo.category !== undefined ? (
+                      <td>{this.state.doctorInfo.chamber_address}</td>
                     ) : (
                       <td>N/A</td>
                     )}
                   </tr>
                   <tr>
                     <th>Visiting Time</th>
-                    {this.state.doctorInfo.profile !== undefined ? (
-                      <td>{this.state.doctorInfo.profile.visiting_time}</td>
+                    {this.state.doctorInfo.category !== undefined ? (
+                      <td>{this.state.doctorInfo.visiting_time}</td>
                     ) : (
                       <td>N/A</td>
                     )}

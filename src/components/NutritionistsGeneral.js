@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import NavbarPersonalized from "./NavbarPersonalized";
-import BlogCard from "./BlogCard";
+import NavbarGeneral from "./NavbarGeneral";
+import DoctorCard from "./DoctorCard";
 
 import axios from "axios";
 import URLs from "../URLs";
 
-export default class VideosPersonalized extends Component {
+export default class NutritionistsGeneral extends Component {
   constructor(props) {
     super(props);
 
@@ -16,7 +16,7 @@ export default class VideosPersonalized extends Component {
 
   componentDidMount() {
     axios
-      .get(URLs.blog_api + "video/getbytype?type=recent")
+      .get(URLs.blog_api + "nutritionist/getbytype?type=popular")
       .then((response) => {
         if (response.status === 200) {
           this.setState({
@@ -32,27 +32,23 @@ export default class VideosPersonalized extends Component {
   render() {
     return (
       <div className="overflow-hidden">
-        <NavbarPersonalized type={2} selected={"videos"} />
+        <NavbarGeneral type={2} selected={"nutritionists"} />
         <div className="container">
           <br />
           <br />
           <br />
           <br />
-          <div className="row">
-            <h2>Recent Videos</h2>
+          <h2>Popular Nutritionists</h2>
+          <div className="row container">
             <div className="row">
               {this.state.recent_blogs.map((news) => (
-                <BlogCard
+                <DoctorCard
                   size="col-md-4"
                   key={news}
-                  title={news.title}
+                  name={news.user_id.name}
+                  photo={news.user_id.photo}
                   category={news.category}
-                  image={
-                    "https://img.youtube.com/vi/" +
-                    news.video_links[0].split("v=")[1] +
-                    "/sddefault.jpg"
-                  }
-                  id={"/getpurecure/video/" + news._id}
+                  id={"/getpurecure/nutritionist/" + news.user_id._id}
                 />
               ))}
             </div>

@@ -41,7 +41,7 @@ export default class PopularDoctors extends React.Component {
                 <li class="list-group-item  bg-white">
                   <img
                     src={
-                      this.state.recent_blogs[0].photo ||
+                      this.state.recent_blogs[0].user_id.photo ||
                       "https://image.freepik.com/free-vector/doctor-character-background_1270-84.jpg"
                     }
                     alt={""}
@@ -51,16 +51,16 @@ export default class PopularDoctors extends React.Component {
                   />
 
                   <b className="text-dark text-lg">
-                    {this.state.recent_blogs[0].name}
+                    {this.state.recent_blogs[0].user_id.name}
                   </b>
                   <sub className="text-dark ">
-                    {"(" + this.state.recent_blogs[0].profile.category + ")"}
+                    {"(" + this.state.recent_blogs[0].category + ")"}
                   </sub>
                 </li>
                 <li class="list-group-item  bg-white">
                   <img
                     src={
-                      this.state.recent_blogs[1].photo ||
+                      this.state.recent_blogs[1].user_id.photo ||
                       "https://image.freepik.com/free-vector/doctor-character-background_1270-84.jpg"
                     }
                     alt={""}
@@ -70,16 +70,16 @@ export default class PopularDoctors extends React.Component {
                   />
 
                   <b className="text-dark text-lg">
-                    {this.state.recent_blogs[1].name}
+                    {this.state.recent_blogs[1].user_id.name}
                   </b>
                   <sub className="text-dark ">
-                    {"(" + this.state.recent_blogs[1].profile.category + ")"}
+                    {"(" + this.state.recent_blogs[1].category + ")"}
                   </sub>
                 </li>
                 <li class="list-group-item  bg-white">
                   <img
                     src={
-                      this.state.recent_blogs[2].photo ||
+                      this.state.recent_blogs[2].user_id.photo ||
                       "https://image.freepik.com/free-vector/doctor-character-background_1270-84.jpg"
                     }
                     alt={""}
@@ -89,10 +89,10 @@ export default class PopularDoctors extends React.Component {
                   />
 
                   <b className="text-dark text-lg">
-                    {this.state.recent_blogs[2].name}
+                    {this.state.recent_blogs[2].user_id.name}
                   </b>
                   <sub className="text-dark ">
-                    {"(" + this.state.recent_blogs[2].profile.category + ")"}
+                    {"(" + this.state.recent_blogs[2].category + ")"}
                   </sub>
                 </li>
 
