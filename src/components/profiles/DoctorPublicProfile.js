@@ -16,10 +16,15 @@ export default class DoctorPublicProfile extends Component {
       doctorInfo: {},
       loading: true,
       error: "",
+      uid: null,
     };
   }
 
   componentDidMount() {
+    const uid = localStorage.getItem("uid");
+    if (uid !== undefined && uid !== null) {
+      this.setState({ uid: uid });
+    }
     const { id } = this.props.match.params;
     if (id !== undefined) {
       this.setState({
