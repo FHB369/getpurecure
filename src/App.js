@@ -28,6 +28,9 @@ import BlogDetails from "./components/blogs/BlogDetails";
 import VideoDetails from "./components/videos/VideoDetails";
 import DoctorPublicProfile from "./components/profiles/DoctorPublicProfile";
 import NutritionistPublicProfile from "./components/profiles/NutritionistPublicProfile";
+import HospitalDetails from "./components/profiles/HospitalDetails";
+import ProductDetails from "./components/ProductDetails";
+import Cart from "./components/Cart";
 
 class App extends React.Component {
   constructor(props) {
@@ -168,9 +171,20 @@ class App extends React.Component {
                       <HospitalsGeneral />
                     )}
                   </Route>
+                  <Route
+                    exact
+                    path="/getpurecure/hospital/:id"
+                    component={HospitalDetails}
+                  />
                   <Route exact path="/getpurecure/shop">
                     <Shop />
                   </Route>
+                  <Route
+                    exact
+                    path="/getpurecure/product/:id"
+                    component={ProductDetails}
+                  />
+                  <Route exact path="/getpurecure/shop/cart" component={Cart} />
                   <Route exact path="/getpurecure/search">
                     <Search />
                   </Route>

@@ -48,12 +48,7 @@ export default class HospitalsPersonalized extends Component {
                   name={news.name}
                   category={news.category.toUpperCase()}
                   rating={news.rating}
-                  content={{
-                    url: "/",
-                    source_url: "https://www.prothomalo.com",
-                    title: "a",
-                    summary: "Test",
-                  }}
+                  id={"/getpurecure/hospital/" + news._id}
                 />
               ))}
             </div>

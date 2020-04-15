@@ -57,6 +57,7 @@ export default class HomePersonalized extends React.Component {
           localStorage.removeItem("uid");
           localStorage.removeItem("image");
           localStorage.removeItem("name");
+          localStorage.removeItem("cart");
           self.setState({
             user: {},
           });

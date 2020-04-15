@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import NavbarGeneral from "./NavbarGeneral";
 import NavbarPersonalized from "./NavbarPersonalized";
 import ProductCard from "./ProductCard";
@@ -13,10 +14,18 @@ export default class Shop extends Component {
     this.state = {
       auth: false,
       recent_products: [],
+      cart: [],
     };
   }
 
   componentDidMount() {
+    const cart = JSON.parse(localStorage.getItem("cart"));
+    console.log(cart);
+
+    if (cart !== undefined && cart !== null) {
+      this.setState({ cart: cart });
+    }
+
     const uid = localStorage.getItem("uid");
     if (uid) {
       this.setState({ auth: true });
@@ -61,12 +70,7 @@ export default class Shop extends Component {
                   discountPrice={news.discountPrice}
                   price={news.price}
                   image={news.photos[0]}
-                  content={{
-                    url: "/",
-                    source_url: "https://www.prothomalo.com",
-                    title: "a",
-                    summary: "Test",
-                  }}
+                  id={"/getpurecure/product/" + news._id}
                 />
               ))}
             </div>
@@ -81,6 +85,27 @@ export default class Shop extends Component {
         <br />
         <br />
         <br />
+        <Link to="/getpurecure/shop/cart">
+          <div
+            class="float-right"
+            style={{
+              width: "20vw",
+              height: "60px",
+              position: "fixed",
+              bottom: "0",
+              right: "2vw",
+              backgroundColor: "#ffffff",
+              boxShadow: "-5px 0px 30px #dddddd",
+              borderTopLeftRadius: "20px",
+              borderTopRightRadius: "20px",
+              textAlign: "center",
+              paddingTop: "20px",
+              fontSize: "1.2rem",
+            }}
+          >
+            <i class="fas fa-shopping-cart"></i> Cart ({this.state.cart.length})
+          </div>
+        </Link>
       </div>
     );
   }

@@ -35,6 +35,7 @@ export default class NavbarPersonalized extends Component {
           localStorage.removeItem("uid");
           localStorage.removeItem("image");
           localStorage.removeItem("name");
+          localStorage.removeItem("cart");
           window.location.replace("/getpurecure");
         }
       })
