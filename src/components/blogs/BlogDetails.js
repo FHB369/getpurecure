@@ -321,7 +321,6 @@ export default class BlogDetails extends Component {
                   <Editor
                     apiKey="i7252if3limictidpuqd9e8tj6x234wgfm5unzlhfqx38cvg"
                     initialValue={this.state.comment}
-                    value={this.state.comment}
                     init={{
                       selector: "textarea", // change this value according to your HTML
                       height: 200,
